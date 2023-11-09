@@ -31,17 +31,20 @@ namespace ECommerce.Api.Orders.Providers
             throw new NotImplementedException();
         }
 
-        public async Task<(bool IsSuccess, IEnumerable<Models.OrderItem> Orders, string ErrorMessage)> GetOrdersAsync(int customerId)
+        public async Task<(bool IsSuccess, IEnumerable<Models.Order> Orders, string ErrorMessage)> GetOrdersAsync(int customerId)
         {
             try
             {
                 //FIX 
-                var orders = await dbContext.Orders.FirstOrDefaultAsync(o => o.CustomerId == customerId);
-                if (orders != null)
+                var orders = await dbContext.Orders.Where(o => o.CustomerId == customerId).ToListAsync();
+                if (orders != null && orders.Any())
                 {
-                    var orderModel = mapper.Map<Db.Order, Models.Order>(orders);
-                    var orderItemModel = mapper.Map<IEnumerable<Db.OrderItem>, IEnumerable<Models.OrderItem>>(orders.Items);
-                    return (true, orderItemModel, null);
+                    var result = mapper.Map<IEnumerable<Db.Order>, IEnumerable<Models.Order>>(orders);
+                    //foreach (var order in result)
+                    //{
+                    //    mapper.Map<IEnumerable<Db.OrderItem>, IEnumerable<Models.OrderItem>>(order.Items.AsEnumerable<IEnumerable>);
+                    //}
+                    return (true, result, null);
                 }
                 return (false, null, "Not found");
             }
