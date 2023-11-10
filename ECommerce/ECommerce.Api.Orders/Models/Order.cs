@@ -1,5 +1,4 @@
-﻿using ECommerce.Api.Orders.Db;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System;
 
 namespace ECommerce.Api.Orders.Models
