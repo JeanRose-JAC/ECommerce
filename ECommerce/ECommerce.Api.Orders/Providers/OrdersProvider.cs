@@ -91,5 +91,24 @@ namespace ECommerce.Api.Orders.Providers
                 return (false, null, ex.Message);
             }
         }
+
+        public async Task<(bool IsSuccess, IEnumerable<Models.Order> Orders, string ErrorMessage)> GetOrdersAsync()
+        {
+            try
+            {
+                var orders = await dbContext.Orders.Include(o => o.Items).ToListAsync();
+                if (orders != null && orders.Any())
+                {
+                    var result = mapper.Map<IEnumerable<Db.Order>, IEnumerable<Models.Order>>(orders);
+                    return (true, result, null);
+                }
+                return (false, null, "Not found");
+            }
+            catch (Exception ex)
+            {
+                logger?.LogError(ex.ToString());
+                return (false, null, ex.Message);
+            }
+        }
     }
 }
