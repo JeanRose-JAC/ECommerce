@@ -6,6 +6,14 @@ using System.Threading.Tasks;
 
 namespace ECommerce.Api.Search.Controllers
 {
+    /*
+    * Course: 		Web Programming 3
+    * Assessment: 	Milestone 3
+    * Created by: 	JEAN ROSE MANIGBAS - 2127668
+    * Date: 		24 NOV 2023
+    * Class Name: 	SearchController.cs
+    * Description: 	The search controller class handles the functions that get called when a http request is made to the api.
+    */
     [Route("api/search")]
     [ApiController]
     public class SearchController : ControllerBase

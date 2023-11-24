@@ -10,7 +10,7 @@ namespace ECommerce.Api.Order.Controllers
     * Created by: 	JEAN ROSE MANIGBAS - 2127668
     * Date: 		11 NOV 2023
     * Class Name: 	OrdersController.cs
-    * Description: 	The orders controller class handles the functions that get called when a http request is made in the website.
+    * Description: 	The orders controller class handles the functions that get called when a http request is made to the api.
     */
 
     [ApiController]

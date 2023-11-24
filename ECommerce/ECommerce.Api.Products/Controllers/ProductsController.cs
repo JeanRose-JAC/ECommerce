@@ -10,7 +10,7 @@ namespace ECommerce.Api.Products.Controllers
     * Created by: 	JEAN ROSE MANIGBAS - 2127668
     * Date: 		11 NOV 2023
     * Class Name: 	ProductsController.cs
-    * Description: 	The products controller class handles the functions that get called when a http request is made in the website.
+    * Description: 	The products controller class handles the functions that get called when a http request is made to the api.
     */
 
     [ApiController]

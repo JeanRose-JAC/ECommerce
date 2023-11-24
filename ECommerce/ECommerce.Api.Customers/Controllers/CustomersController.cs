@@ -10,7 +10,7 @@ namespace ECommerce.Api.Customers.Controllers
     * Created by: 	JEAN ROSE MANIGBAS - 2127668
     * Date: 		11 NOV 2023
     * Class Name: 	CustomersController.cs
-    * Description: 	The customers controller class handles the functions that get called when a http request is made in the website.
+    * Description: 	The customers controller class handles the functions that get called when a http request is made to the api.
     */
 
     [ApiController]
